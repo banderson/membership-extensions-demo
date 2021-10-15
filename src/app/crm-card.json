@@ -1,17 +1,13 @@
 {
   "type": "crm-card",
   "data": {
-    "title": "App CRM Card",
+    "title": "Inbound Labs",
     "fetch": {
       "targetFunction": "crmCard",
       "objectTypes": [
         {
           "name": "contacts",
-          "propertiesToSend": [
-            "country",
-            "city",
-            "state"
-          ],
+          "propertiesToSend": ["country", "city", "state"],
           "actions": [
             {
               "type": "IFRAME",

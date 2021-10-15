@@ -5,6 +5,12 @@
     "crmCard": {
       "file": "crm-card.js",
       "secrets": []
+    },
+    "grant": {
+      "file": "grant.js"
+    },
+    "revoke": {
+      "file": "revoke.js"
     }
   }
 }
