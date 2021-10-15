@@ -1,0 +1,11 @@
+[
+  {
+    "default": "",
+    "label": "Text",
+    "locked": false,
+    "name": "text",
+    "required": false,
+    "type": "richtext",
+    "validation_regex": ""
+  }
+]
