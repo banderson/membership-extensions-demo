@@ -107,7 +107,7 @@ exports.main = async (context = {}, sendResponse) => {
       type: 'IFRAME',
       width: 1200,
       height: 750,
-      uri: 'https://app.hubspotqa.com/content/99553819/edit/43029448059/settings',
+      uri: 'https://app.hubspotqa.com/content/99553819/edit/43256011354/settings',
       label: 'Settings',
     };
 
@@ -159,7 +159,7 @@ exports.main = async (context = {}, sendResponse) => {
       type: 'IFRAME',
       width: 1200,
       height: 750,
-      uri: 'https://app.hubspotqa.com/content/99553819/edit/43029448059/settings',
+      uri: 'https://app.hubspotqa.com/content/99553819/edit/43256011354/settings',
       label: 'Settings',
     };
   } else {
