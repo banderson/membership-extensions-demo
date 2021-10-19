@@ -15,7 +15,7 @@ async function removeContactFromList(vid, listId, token) {
 }
 
 exports.main = async (context = {}, sendResponse) => {
-  const { associatedObjectId } = context;
+  const { associatedObjectId, secrets = {} } = context;
 
   // throw new Error(
   //   `Probably can't enroll Contact ${associatedObjectId} in this list.`
@@ -26,10 +26,10 @@ exports.main = async (context = {}, sendResponse) => {
   const { updated, discarded, invalidVids } = await removeContactFromList(
     associatedObjectId,
     listId,
-    context.secrets.PRIVATE_APP_ACCESS_TOKEN
+    secrets.PRIVATE_APP_ACCESS_TOKEN
   );
 
   sendResponse({
-    message: `Contact successfully removed from members-only access.`,
+    message: `Access revoked, they've been removed from members-only access.`,
   });
 };

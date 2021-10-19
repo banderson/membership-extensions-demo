@@ -38,13 +38,13 @@ exports.main = async (context = {}, sendResponse) => {
   let settingsAction;
   let primaryAction;
 
-  if (hs_emailconfirmationstatus === 'Confirmation Pending') {
+  if (!hs_emailconfirmationstatus || hs_emailconfirmationstatus === 'Confirmation Pending') {
     sections = [
       {
         type: 'alert',
         titleText: 'Email Delivery Blocked',
         bodyText: `Resending registration email won't work. See knowledgebase article for details.`,
-        variant: 'error',
+        variant: 'danger',
       },
       {
         type: 'button',

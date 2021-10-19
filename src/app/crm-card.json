@@ -7,7 +7,10 @@
       "objectTypes": [
         {
           "name": "contacts",
-          "propertiesToSend": ["country", "city", "state", "hs_emailconfirmationstatus", "hs_content_membership_registered_at"],
+          "propertiesToSend": [
+            "hs_emailconfirmationstatus",
+            "hs_content_membership_registered_at"
+          ],
           "actions": [
             {
               "type": "IFRAME",

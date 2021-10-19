@@ -15,17 +15,17 @@ async function addContactToList(vid, listId, token) {
 }
 
 exports.main = async (context = {}, sendResponse) => {
-  const { associatedObjectId } = context;
+  const { associatedObjectId, secrets = {} } = context;
 
-  const listId = 34; // internal 58
+  const listId = 34;
 
   const { updated, discarded, invalidVids } = await addContactToList(
     associatedObjectId,
     listId,
-    context.secrets.PRIVATE_APP_ACCESS_TOKEN
+    secrets.PRIVATE_APP_ACCESS_TOKEN
   );
 
   sendResponse({
-    message: `Contact successfully granted access.`,
+    message: `Access granted, they'll receive an email to complete registration.`,
   });
 };

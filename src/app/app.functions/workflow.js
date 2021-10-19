@@ -11,9 +11,7 @@ async function enrollInWorkflow(workflowId, vid, token) {
 }
 
 exports.main = async (context = {}, sendResponse) => {
-  const { associatedObjectId, email = 'banderson@hubspot.com' } = context;
-
-  // throw new Error(`Can't enroll contact ${associatedObjectId} with email ${email}`)
+  const { associatedObjectId } = context;
 
   const workflowId = 20708406;
 
@@ -24,6 +22,6 @@ exports.main = async (context = {}, sendResponse) => {
   );
 
   sendResponse({
-    message: `Login link successfully sent via App Notification.`,
+    message: `Reminder notification sent.`,
   });
 };
