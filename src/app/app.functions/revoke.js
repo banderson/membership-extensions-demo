@@ -17,11 +17,11 @@ async function removeContactFromList(vid, listId, token) {
 exports.main = async (context = {}, sendResponse) => {
   const { associatedObjectId } = context;
 
-  throw new Error(
-    `Probably can't enroll Contact ${associatedObjectId} in this list.`
-  );
+  // throw new Error(
+  //   `Probably can't enroll Contact ${associatedObjectId} in this list.`
+  // );
 
-  const listId = 34; // internal 58
+  const listId = 34;
 
   const { updated, discarded, invalidVids } = await removeContactFromList(
     associatedObjectId,

@@ -1,35 +1,29 @@
 const axios = require('axios');
 
-async function removeContactFromList(vid, listId, token) {
+async function enrollInWorkflow(workflowId, vid, token) {
   return axios({
-    url: `https://api.hubapiqa.com/contacts/v1/lists/${listId}/remove`,
+    url: `https://api.hubapiqa.com/automation/v2/workflows/${workflowId}/enrollments/contacts/${vid}`,
     method: 'POST',
-    data: { vids: [vid] },
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  }).then(result => {
-    const { updated, discarded, invalidVids, invalidEmails } = result.data;
-    return { updated, discarded, invalidVids, invalidEmails };
   });
 }
 
 exports.main = async (context = {}, sendResponse) => {
-  const { associatedObjectId } = context;
+  const { associatedObjectId, email = 'banderson@hubspot.com' } = context;
 
-  throw new Error(
-    `Probably can't enroll Contact ${associatedObjectId} in this list.`
-  );
+  // throw new Error(`Can't enroll contact ${associatedObjectId} with email ${email}`)
 
-  const listId = 34; // internal 58
+  const workflowId = 20708406;
 
-  const { updated, discarded, invalidVids } = await removeContactFromList(
+  await enrollInWorkflow(
+    workflowId,
     associatedObjectId,
-    listId,
     context.secrets.PRIVATE_APP_ACCESS_TOKEN
   );
 
   sendResponse({
-    message: `Contact successfully removed from members-only access.`,
+    message: `Login link successfully sent via App Notification.`,
   });
 };

@@ -9,7 +9,7 @@
     "crm.schemas.contacts.write",
     "crm.objects.contacts.read",
     "lists",
-    "workflows-access"
+    "automation"
   ],
   "public": false,
   "extensions": {
