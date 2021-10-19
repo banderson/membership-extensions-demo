@@ -12,5 +12,9 @@
     "revoke": {
       "file": "revoke.js"
     }
+    },
+    "workflow": {
+      "file": "workflow.js"
+    }
   }
 }

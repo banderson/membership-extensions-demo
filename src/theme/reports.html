@@ -1,6 +1,6 @@
 <!--
     templateType: page
-    label: Page template
+    label: Reporting page
     isAvailableForNewContent: true
 -->
 <!doctype html>
@@ -111,10 +111,7 @@
       }
       .container {
         margin: 0 auto;
-        max-width: 850px;
-      }
-      .cta {
-        margin: 40px 0 100px;
+        max-width: 1200px;
       }
 
       #logo {
@@ -130,73 +127,13 @@
     <div class="container">
       <h1>
         <img id="logo" src="{{ get_asset_url('./biglytics.png') }}">
+        Reports
       </h1>
-      <h2>In today’s dynamic environment, data driven decisions are everything.</h2>
     </div>
   </header>
   <main>
     <div class="container">
-      <h3>All about projects and their components</h3>
-      <p>
-      Projects can contain themes (like the one this page template belongs to), private apps, extensions, and serverless functions. Before you build your own project from scratch, learn more about each of these components below.
-      </p>
-      <div class="grid">
-        {% module 'themes'
-        path="./info"
-        heading="Themes"
-        text="<p>A theme is a collection of templates and modules designed to work together to create a cohesive website. Themes also make it easy for marketers to create and edit website content without touching code.</p>"
-        link_text="Go to theme docs"
-        link_url={
-          "url" : {
-            "type" : "EXTERNAL",
-            "href" : "https://developers.hubspot.com/docs/cms/building-blocks/themes"
-            }
-          }
-        %}
-        {% module 'private-apps'
-        path="./info"
-        heading="Private apps"
-        text="<p>Private apps are single-account integrations that use access tokens instead of API keys for authentication. We handle the configuration, which means you get the security of OAuth without all the work.</p>"
-        link_text="Go to private app docs"
-        link_url={
-          "url" : {
-            "type" : "EXTERNAL",
-            "href" : "https://developers.hubspot.com/docs/api/developer-tools-overview"
-            }
-          }
-        %}
-        {% module 'extensions'
-        path="./info"
-        heading="Extensions"
-        text="<p>Extensions are custom elements built on top of the standard HubSpot UI. They include CRM cards, timeline events, accounting features, and more.</p>"
-        link_text="Go to extension docs"
-        link_url={
-          "url" : {
-            "type" : "EXTERNAL",
-            "href" : "https://developers.hubspot.com/docs/api/crm/extensions/custom-cards"
-            }
-          }
-        %}
-        {% module 'serverless-functions'
-        path="./info"
-        heading="Serverless functions"
-        text="<p>Serverless functions allow you to use HubSpot’s APIs without exposing security info or using your own servers. </p>"
-        link_text="Go to serverless function docs"
-        link_url={
-          "url" : {
-            "type" : "EXTERNAL",
-            "href" : "https://developers.hubspot.com/docs/cms/data/serverless-functions"
-            }
-          }
-        %}
-      </div>
-
-      <div class="cta">
-          <h3>Create your own project</h3>
-          <p>Want to build a new project from scratch? Get started with our project Quickstart Guide.</p>
-          <a href="" class="button">Start building with Quickstart Guide</a>
-          <a href="https://developers.hubspot.com/" class="button button--ghost">Go to developer homepage</a>
-      </div>
+      <img width="100%" src="{{ get_asset_url('./reports-mini.png') }}" />
     </div>
   </main>
 
