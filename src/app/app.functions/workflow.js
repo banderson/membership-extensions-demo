@@ -19,7 +19,11 @@ exports.main = async (context = {}, sendResponse) => {
     workflowId,
     associatedObjectId,
     context.secrets.PRIVATE_APP_ACCESS_TOKEN
-  );
+  ).catch(error => {
+    throw new Error(
+      'Cannot execute worfklow: be sure "automation" scope is enabled'
+    );
+  });
 
   sendResponse({
     message: `Reminder notification sent.`,

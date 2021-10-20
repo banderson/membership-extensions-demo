@@ -17,10 +17,6 @@ async function removeContactFromList(vid, listId, token) {
 exports.main = async (context = {}, sendResponse) => {
   const { associatedObjectId, secrets = {} } = context;
 
-  // throw new Error(
-  //   `Probably can't enroll Contact ${associatedObjectId} in this list.`
-  // );
-
   const listId = 34;
 
   const { updated, discarded, invalidVids } = await removeContactFromList(

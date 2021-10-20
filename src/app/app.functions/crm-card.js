@@ -19,11 +19,11 @@ async function isMemberOfList(vid, listId, token) {
 }
 
 exports.main = async (context = {}, sendResponse) => {
-  // const hubspotClient = new hubspot.Client({
-  //   accessToken: context.secrets.PRIVATE_APP_ACCESS_TOKEN,
-  // });
-
-  const { associatedObjectId, hs_emailconfirmationstatus, hs_content_membership_registered_at } = context;
+  const {
+    associatedObjectId,
+    hs_emailconfirmationstatus,
+    hs_content_membership_registered_at,
+  } = context;
 
   const listId = 34;
 
@@ -67,7 +67,6 @@ exports.main = async (context = {}, sendResponse) => {
         text: `Notify Contact`,
       },
     ];
-
   } else if (isMember && hs_content_membership_registered_at) {
     sections = [
       {
