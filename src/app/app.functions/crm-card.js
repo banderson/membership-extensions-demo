@@ -146,13 +146,7 @@ exports.main = async (context = {}, sendResponse) => {
         text: `Grant Access`,
       },
     ];
-    primaryAction = {
-      type: 'IFRAME',
-      width: 1200,
-      height: 750,
-      uri: 'https://knowledge.hubspot.com/website-pages/require-member-registration-to-access-private-content',
-      label: 'Learn More',
-    };
+    primaryAction = getMemberRegistrationIFrame();
   }
 
   sendResponse({
@@ -168,6 +162,10 @@ exports.main = async (context = {}, sendResponse) => {
     primaryAction,
   });
 };
+
+/**
+ * Utility functions for building JSON for common actions:
+ */
 
 function getContentSettingsIFrame() {
   return {
@@ -198,12 +196,16 @@ function getDropdownActionList() {
       uri: `https://app.hubspotqa.com/contacts/${config.portalId}/objects/0-1/views/1003073/list`,
       label: 'View Access List',
     },
-    {
-      type: 'IFRAME',
-      width: 1200,
-      height: 750,
-      uri: 'https://knowledge.hubspot.com/website-pages/require-member-registration-to-access-private-content',
-      label: 'Knowledge Base',
-    },
+    getMemberRegistrationIFrame(),
   ];
+}
+
+function getMemberRegistrationIFrame() {
+  return {
+    type: 'IFRAME',
+    width: 1200,
+    height: 750,
+    uri: 'https://knowledge.hubspot.com/website-pages/require-member-registration-to-access-private-content',
+    label: 'Knowledge Base',
+  };
 }
