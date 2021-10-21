@@ -79,7 +79,7 @@ exports.main = async (context = {}, sendResponse) => {
         onClick: {
           type: 'SERVERLESS_ACTION_HOOK',
           serverlessFunction: 'workflow',
-          label: 'Notify Contact',
+          // associatedObjectProperties: ['email', 'firstname', 'conditionalone'],
         },
         text: `Notify Contact`,
       },
@@ -114,7 +114,11 @@ exports.main = async (context = {}, sendResponse) => {
           onClick: {
             type: 'SERVERLESS_ACTION_HOOK',
             serverlessFunction: 'workflow',
-            label: 'Send Reminder',
+            // associatedObjectProperties: [
+            //   'email',
+            //   'firstname',
+            //   'conditionalone',
+            // ],
           },
           text: `Send Reminder`,
         },
@@ -141,7 +145,7 @@ exports.main = async (context = {}, sendResponse) => {
         onClick: {
           type: 'SERVERLESS_ACTION_HOOK',
           serverlessFunction: 'grant',
-          label: 'Grant Access',
+          // associatedObjectProperties: ['email', 'firstname', 'conditionalone'],
         },
         text: `Grant Access`,
       },
