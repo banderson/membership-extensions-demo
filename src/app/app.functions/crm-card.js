@@ -1,13 +1,5 @@
 const axios = require('axios');
 
-/**
- * Hardcoded IDs and other values that should change per portal
- */
-const config = {
-  portalId: 99553819,
-  membershipListId: 34,
-};
-
 async function isMemberOfList(vid, listId, token) {
   return axios
     .get(`https://api.hubspotqa.com/contacts/v1/lists/${listId}/contacts/all`, {
@@ -34,12 +26,13 @@ exports.main = async (context = {}, sendResponse) => {
     associatedObjectId,
     hs_emailconfirmationstatus,
     hs_content_membership_registered_at,
+    secrets,
   } = context;
 
   const isMember = await isMemberOfList(
     associatedObjectId,
-    config.membershipListId,
-    context.secrets.PRIVATE_APP_ACCESS_TOKEN
+    process.env.LIST_ID,
+    secrets.PRIVATE_APP_ACCESS_TOKEN
   );
 
   let sections;
@@ -176,7 +169,7 @@ function getContentSettingsIFrame() {
     type: 'IFRAME',
     width: 1200,
     height: 750,
-    uri: `https://app.hubspotqa.com/content/${config.portalId}/edit/43256011354/settings`,
+    uri: `https://app.hubspotqa.com/content/${process.env.PORTAL_ID}/edit/43256011354/settings`,
     label: 'Settings',
   };
 }
@@ -197,7 +190,7 @@ function getDropdownActionList() {
       type: 'IFRAME',
       width: 1200,
       height: 750,
-      uri: `https://app.hubspotqa.com/contacts/${config.portalId}/objects/0-1/views/1003073/list`,
+      uri: `https://app.hubspotqa.com/contacts/${process.env.PORTAL_ID}/objects/0-1/views/1003073/list`,
       label: 'View Access List',
     },
     getMemberRegistrationIFrame(),

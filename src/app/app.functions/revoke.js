@@ -1,12 +1,5 @@
 const axios = require('axios');
 
-/**
- * Hardcoded IDs and other values that should change per portal
- */
-const config = {
-  membershipListId: 34,
-};
-
 async function removeContactFromList(vid, listId, token) {
   return axios({
     url: `https://api.hubapiqa.com/contacts/v1/lists/${listId}/remove`,
@@ -25,7 +18,7 @@ exports.main = async (context = {}, sendResponse) => {
 
   await removeContactFromList(
     associatedObjectId,
-    config.membershipListId,
+    process.env.PORTAL_ID,
     secrets.PRIVATE_APP_ACCESS_TOKEN
   );
 
